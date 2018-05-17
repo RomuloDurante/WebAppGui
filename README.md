@@ -1,2 +1,3 @@
 # RESTful_API_NodeJS
-I 'm doing a RESTful API without the NPM modules, because i wanna really learn Node JS.
+Create a GUI to use with the RESTful_API
+
