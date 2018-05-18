@@ -12,7 +12,14 @@ const environments = {
       httpsPORT:3001,
       envName: 'development',
       hashSecret: 'testKey',
-      maxChecks: 5
+      maxChecks: 5,
+      templateGlobals: {
+        appName: 'TESTEDURANTE',
+        yearCreated: '2018',
+        companyName: 'FixedRead',
+        baseUrl: 'google.com'
+
+      }
   },
 
   // Production object

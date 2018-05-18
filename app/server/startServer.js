@@ -3,8 +3,8 @@
  */
 
   // -> Depedencies
-  const $http = require('http'),
-        $https = require('https'),
+  const http = require('http'),
+        https = require('https'),
         setServer = require('./setServer'),
         httpsServerOptions = require('./https/httpsServerOptions');
   //End Dependencies
@@ -13,7 +13,7 @@
   const startServer = {
     //config HTTP server
     http: (config) => {
-      return $http.createServer((req, res) => {
+      return http.createServer((req, res) => {
         //config HTTP server
         setServer(req, res);        
       }
@@ -22,7 +22,7 @@
 
     //config HTTPS server
     https: (config) => {
-      return $https.createServer( httpsServerOptions, (req, res) => {
+      return https.createServer( httpsServerOptions, (req, res) => {
         //configServers
         setServer(req, res);        
       }

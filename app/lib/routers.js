@@ -5,23 +5,33 @@
  // -> Depedencies
     const  _users = require('./services/users/users'),
            _tokens = require('./services/token/tokens'),
-           _checks = require('./services/check/checks');
+           _checks = require('./services/check/checks'),
+           index = require('../public/templates/htmlScripts/index'),
+           public = require('../public/public');
+          
 // End Dependencies
 
 // Public Router requests
 const routers = {
   // SERVICES
-
+ /***************Templates****************** */
+  '' : index,
+  // 'account/create' : accountCreate,
+  // 'account/edit' : accountEdit,
+  // 'account/deleted' : accountDeleted,
+  // 'session/create' : sessionCreate,
+  // 'session/deleted' : sessionDeleted,
+  // 'checks/all' : checkList,
+  // 'checks/create' : checksCreate,
+  // 'checks/edit' : checksEdit,
+  'public' : public.startService,
+ /****************JSON API************************/ 
   // Users service
-  users: _users.startService,
-
+  'api/users': _users.startService,
   // Tokens Service
-  tokens: _tokens.startService,
-
+  'api/tokens': _tokens.startService,
   // Tokens Service
-  checks: _checks.startService,
-
-
+  'api/checks': _checks.startService,
   /*********************************************** */
   // COMMOM SERVICES
 
@@ -42,6 +52,9 @@ const routers = {
       if(routers[payload.path] && payload.path !== 'choose') {
 
         return routers[payload.path];
+
+      } else if(payload === 'public'){
+        return routers.public;
 
       } else{
         return routers.notFound;

@@ -5,7 +5,9 @@
 
  // -> Depedencies
  const crypto = require('crypto'),
-      config = require('./config');
+      config = require('./config'),
+      path = require('path'),
+      fs = require('fs');
 
 
  // End Dependencies
@@ -143,8 +145,7 @@
           return false;
         }
 
-      }
-
+      },
 
  }
 

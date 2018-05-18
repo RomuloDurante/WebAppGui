@@ -1,11 +1,14 @@
-var http = require('http');
 
-http.createServer((req, res)=>{
-
-  var test = req.url.replace('/','');
-
-  console.log(test);
-  res.end('hello');
-}).listen(3000, console.log('Server start on port 3000'));
+   var fs = require('fs');
 
 
+  //  var test = fs.readFileSync('test.css');
+
+  fs.readFile('test.css', (err, data)=>{
+    if(!err && data){
+      console.log(data.toString());
+    } else {
+      console.log(err);
+    }
+  });
+   

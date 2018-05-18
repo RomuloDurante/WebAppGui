@@ -4,14 +4,14 @@
  */
 
  // Dependencies
- const $url = require('url');
+ const url = require('url');
  // End dependencies
 
  const _payload = {
   create: (req, buffer) => {
     //Parse the url
     function parsedUrl(req) {
-      return $url.parse(req.url, true);
+      return url.parse(req.url, true);
     }
     var parsedUrl = parsedUrl(req);
 
